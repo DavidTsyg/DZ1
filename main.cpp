@@ -12,16 +12,16 @@ char Gammirovanie(char a, char gamma)
 
 char Cyclicheskiy_sdvig(char a_gamm)
 {
-    char maska = a_gamm << 3;
-    char a_ = (a_gamm  >> 5) & 0b00000111;
+    char maska = a_gamm << 4;
+    char a_ = (a_gamm  >> 4) & 0b00001111;
     char a_result = a_ | maska;
     return a_result;
 }
 
 char Obr_cyclicheskiy_sdvig(char a_result)
 {
-    char maska = (a_result >> 3) & 0b00011111;
-    char a__ = a_result  << 5;
+    char maska = (a_result >> 4) & 0b00001111;
+    char a__ = a_result  << 4;
     char a_pre_gamm = maska | a__;
     return a_pre_gamm;
 }
